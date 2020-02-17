@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
+import { getPokemon } from '../api.js';
 
 export default class Detail extends Component {
+    state = {
+        pokemon: {}
+    }
+
+    async componentDidMount() {
+        const data = await getPokemon(this.props.match.params.name);
+
+        if (data.body.results) {
+            this.setState({
+                pokemon: data.body.results[0]
+            })
+        }
+    }
+
     render() {
+        const { pokemon } = this.state;
+        console.log(pokemon)
         return (
-            <li className="pokemonItem">
-                    {/* <h2>{this.props.pokemon.pokemon}</h2>
-                    <img src={this.props.pokemon.url_image} alt={this.props.pokemon.pokemon} />
-                    <p>HP: {this.props.pokemon.hp}</p>
-                    <p><span>Attack: {this.props.pokemon.attack}</span> | <span>Defense: {this.props.pokemon.defense}</span></p>
-                    <p>Types: {this.props.pokemon.type_1}, {this.props.pokemon.type_2}</p> */}
-            </li>
+            <div className="pokemon-detail">
+                <h2>{pokemon.pokemon}</h2>
+                <img src={pokemon.url_image} alt={pokemon.pokemon} />
+                <p>HP: {pokemon.hp}</p>
+                <p><span>Attack: {pokemon.attack}</span> | <span>Defense: {pokemon.defense}</span></p>
+                <p>Types: {pokemon.type_1}, {pokemon.type_2}</p>
+            </div>
         )
     }
 }

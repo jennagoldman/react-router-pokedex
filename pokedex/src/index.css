@@ -76,7 +76,7 @@ ul {
   padding-inline-start: 0;
 }
 
-.pokemonItem {
+.pokemon-list-item {
   display: inline-block;
   width: 250px;
   color: #333;
@@ -87,16 +87,27 @@ ul {
   margin: 15px;
 }
 
+.pokemon-detail {
+  width: 500px;
+  color: #333;
+  background: #FFF;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 50px auto;
+}
+
 h2 {
   font-size: 22px;
   text-transform: uppercase;
 }
 
-.pokemonItem p {
+.pokemon-list-item p {
   text-transform: capitalize;
 }
 
-.pokemonItem img {
+.pokemon-list-item img {
   width: 90%;
 }
 

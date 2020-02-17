@@ -3,8 +3,13 @@ import React, { Component } from 'react';
 export default class SearchBar extends Component {
     render() {
         return (
-            <form>
-                <input type="text" name="search" placeholder="Enter Pokemon name" />
+            <form onSubmit={this.props.handleSearch}>
+                <input 
+                type="text" 
+                name="search" 
+                placeholder="Enter Pokemon name" 
+                value={this.props.searchQuery} 
+                onChange={this.props.handleChange} />
                 <button>Search</button>
             </form>
         )
