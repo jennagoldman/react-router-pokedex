@@ -5,11 +5,11 @@ export default class SearchBar extends Component {
         return (
             <form onSubmit={this.props.handleSearch}>
                 <input 
-                type="text" 
                 name="search" 
                 placeholder="Enter Pokemon name" 
-                value={this.props.searchQuery} 
-                onChange={this.props.handleChange} />
+                value={this.props.searchQuery || ''} 
+                onChange={this.props.handleChange} 
+                />
                 <button>Search</button>
             </form>
         )

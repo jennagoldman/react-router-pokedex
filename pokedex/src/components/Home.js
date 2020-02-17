@@ -10,15 +10,13 @@ export default class Home extends Component {
     }
 
     async componentDidMount() {
-        console.log('Component did mount')
         if (this.props.match.params.search) {
-            const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.search}`)
-            this.setState({pokemons: data.body.results})
-        } else {
-            const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?`)
-            this.setState({pokemons: data.body.results})
+            const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.props.match.params.search}`)
+        
+            this.setState({pokemons: data.body.results});
         }
     }
+    
 
     handleSearch = async (event) => {
         event.preventDefault();

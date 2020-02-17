@@ -4,7 +4,6 @@ import PokeItem from './PokeItem';
 
 export default class List extends Component {
     render() {
-        console.log(this.props.data);
         return (
             <section className="pokemon-list">
                 <ul>

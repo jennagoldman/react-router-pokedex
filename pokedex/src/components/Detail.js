@@ -20,7 +20,7 @@ export default class Detail extends Component {
         const { pokemon } = this.state;
         console.log(pokemon)
         return (
-            <div className="pokemon-detail">
+            <div className="item-detail">
                 <h2>{pokemon.pokemon}</h2>
                 <img src={pokemon.url_image} alt={pokemon.pokemon} />
                 <p>HP: {pokemon.hp}</p>
