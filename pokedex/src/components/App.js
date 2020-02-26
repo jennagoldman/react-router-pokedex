@@ -15,6 +15,7 @@ export default class App extends Component {
             <Route exact path="/:search?" component={Home} />
             <Route exact path="/info/about" component={About} />
             <Route exact path="/pokemons/:name" component={Detail} />
+            
           </Switch>
         </Router>
       </div>

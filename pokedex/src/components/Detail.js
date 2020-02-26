@@ -23,9 +23,11 @@ export default class Detail extends Component {
             <div className="item-detail">
                 <h2>{pokemon.pokemon}</h2>
                 <img src={pokemon.url_image} alt={pokemon.pokemon} />
-                <p>HP: {pokemon.hp}</p>
-                <p><span>Attack: {pokemon.attack}</span> | <span>Defense: {pokemon.defense}</span></p>
-                <p>Types: {pokemon.type_1}, {pokemon.type_2}</p>
+                <div id="stats">
+                    <p><span className="hp-span">{pokemon.hp}</span> HP</p>
+                    <p><span><i class="fas fa-bolt"></i> {pokemon.attack}</span> | <span><i class="fas fa-shield-alt"></i> {pokemon.defense}</span></p>
+                    <p>Types: {pokemon.type_1}, {pokemon.type_2}</p>
+                </div>
             </div>
         )
     }
